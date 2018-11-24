@@ -1,9 +1,9 @@
 # build made by user
 
-curDir=`pwd`/src
+srcDir=`pwd`/src
 bldDir=`pwd`/build
 rm -rf ${bldDir}
-cd ${curDir}
+cd ${srcDir}
 
 rm -rf *
 #===============================================================================
@@ -14,7 +14,7 @@ cd proj-${projVer}
 ./configure --prefix=${bldDir}
 make 
 make install
-cd ${curDir}
+cd ${srcDir}
 
 #===============================================================================
 gdalVer="2.3.2"
@@ -25,7 +25,7 @@ cd gdal-${gdalVer}
 ./configure --prefix=${bldDir}
 make
 make install
-cd ${curDir}
+cd ${srcDir}
 
 #===============================================================================
 tiffVer="4.0.10"
@@ -36,7 +36,7 @@ cd tiff-${tiffVer}
 ./configure --prefix=${bldDir}
 make
 make install
-cd ${curDir}
+cd ${srcDir}
 
 #================================================================================
 m4Ver="1.4.17"
@@ -46,7 +46,7 @@ cd m4-${m4Ver}
 ./configure --prefix=${bldDir}
 make
 make install
-cd ${curDir}
+cd ${srcDir}
 
 #================================================================================
 flexVer="2.6.4"
@@ -56,7 +56,7 @@ cd flex-${flexVer}
 ./configure --prefix=${bldDir}
 make
 make install
-cd ${curDir}
+cd ${srcDir}
 
 #================================================================================
 zlibVer="1.2.11"
@@ -66,6 +66,7 @@ cd zlib-${zlibVer}
 ./configure --prefix=${bldDir}
 make
 make install
+cd ${srcDir}
 
 #================================================================================
 pythVer="2.7.15"
@@ -75,7 +76,7 @@ cd Python-${pythVer}
 ./configure --prefix=${bldDir}
 make
 make install
-cd ${curDir}
+cd ${srcDir}
 
 #================================================================================
 grasVer="7.4.2"
@@ -116,5 +117,5 @@ cd grass-${grasVer}
 
 make
 make install
-cd ${curDir}
+cd ${srcDir}
 
