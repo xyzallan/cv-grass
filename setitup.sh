@@ -110,13 +110,6 @@ cd grass-${grasVer}
 # --with-fftw \
 # --with-geos \
 # --with-netcdf \
-# --without-ffmpeg \
-# --without-mysql \
-# --without-postgres \
-# --without-odbc \
-# --without-fftw
-
-
 
 make
 make install
