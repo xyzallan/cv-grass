@@ -3,7 +3,9 @@
 
 srcDir=`pwd`/src
 bldDir=`pwd`/build
-rm -rf ${bldDir}
+if [ -f "${bldDir}" ]; then
+   rm -rf ${bldDir}
+fi
 cd ${srcDir}
 
 rm -rf *
