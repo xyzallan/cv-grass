@@ -4,5 +4,6 @@ rpm -ivh epel-release-latest-7.noarch.rpm
 yum install proj-devel
 yum install gcc gcc-c++
 yum install zlib-devel
+yum install byacc
 
 rm -f *.rpm
