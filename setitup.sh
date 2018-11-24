@@ -97,11 +97,11 @@ cd grass-7.4.2
 # --with-fftw \
 # --with-geos \
 # --with-netcdf \
- --without-ffmpeg \
- --without-mysql \
- --without-postgres \
- --without-odbc \
- --without-fftw
+# --without-ffmpeg \
+# --without-mysql \
+# --without-postgres \
+# --without-odbc \
+# --without-fftw
 
 
 
