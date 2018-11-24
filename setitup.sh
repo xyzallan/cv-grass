@@ -15,64 +15,73 @@ cd proj-${projVer}
 make 
 make install
 cd ${curDir}
+
 #===============================================================================
-wget -O gdal-2.3.2.tar.gz http://download.osgeo.org/gdal/2.3.2/gdal-2.3.2.tar.gz 
-tar -xf gdal-2.3.2.tar.gz
-cd gdal-2.3.2
+gdalVer="2.3.2"
+
+wget -O gdal-${gdalVer}.tar.gz http://download.osgeo.org/gdal/2.3.2/gdal-${gdalVer}.tar.gz 
+tar -xf gdal-${gdalVer}.tar.gz
+cd gdal-${gdalVer}
 ./configure --prefix=${bldDir}
 make
 make install
 cd ${curDir}
 
+#===============================================================================
+tiffVer="4.0.10"
 
-wget -O tiff-4.0.10.tar.gz https://download.osgeo.org/libtiff/tiff-4.0.10.tar.gz
-tar -xf tiff-4.0.10.tar.gz
-cd tiff-4.0.10
-./configure --prefix=${bldDir}
-make
-make install
-cd ${curDir}
-
-
-#================================================================================
-wget -O m4-latest.tar.gz http://ftp.gnu.org/gnu/m4/m4-latest.tar.gz
-tar -xf m4-latest.tar.gz
-cd m4-1.4.17
+wget -O tiff-${tiffVer}.tar.gz https://download.osgeo.org/libtiff/tiff-${tiffVer}.tar.gz
+tar -xf tiff-${tiffVer}.tar.gz
+cd tiff-${tiffVer}
 ./configure --prefix=${bldDir}
 make
 make install
 cd ${curDir}
 
 #================================================================================
-wget -O flex-2.6.4.tar.gz https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz
-tar -xf flex-2.6.4.tar.gz
-cd flex-2.6.4
+m4Ver="1.4.17"
+wget -O m4-${m4Ver}.tar.gz http://ftp.gnu.org/gnu/m4/m4-${m4Ver}.tar.gz
+tar -xf m4-${m4Ver}.tar.gz
+cd m4-${m4Ver}
 ./configure --prefix=${bldDir}
 make
 make install
 cd ${curDir}
 
 #================================================================================
-wget -O zlib-1.2.11.tar.gz https://zlib.net/zlib-1.2.11.tar.gz
-tar -xf zlib-1.2.11.tar.gz
-cd zlib-1.2.11
-./configure --prefix=${bldDir}
-make
-make install
-
-#================================================================================
-wget -O Python-2.7.15.tgz https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz
-tar -xf Python-2.7.15.tgz
-cd Python-2.7.15
+flexVer="2.6.4"
+wget -O flex-${flexVer}.tar.gz https://github.com/westes/flex/releases/download/v${flexVer}/flex-${flexVer}.tar.gz
+tar -xf flex-${flexVer}.tar.gz
+cd flex-${flexVer}
 ./configure --prefix=${bldDir}
 make
 make install
 cd ${curDir}
 
 #================================================================================
-wget -O grass-7.4.2.tar.gz https://grass.osgeo.org/grass74/source/grass-7.4.2.tar.gz
-tar -xf grass-7.4.2.tar.gz
-cd grass-7.4.2
+zlibVer="1.2.11"
+wget -O zlib-${zlibVer}.tar.gz https://zlib.net/zlib-${zlibVer}.tar.gz
+tar -xf zlib-${zlibVer}.tar.gz
+cd zlib-${zlibVer}
+./configure --prefix=${bldDir}
+make
+make install
+
+#================================================================================
+pythVer="2.7.15"
+wget -O Python-${pythVer}.tgz https://www.python.org/ftp/python/${pythVer}/Python-${pythVer}.tgz
+tar -xf Python-${pythVer}.tgz
+cd Python-${pythVer}
+./configure --prefix=${bldDir}
+make
+make install
+cd ${curDir}
+
+#================================================================================
+grasVer="7.4.2"
+wget -O grass-${grasVer}.tar.gz https://grass.osgeo.org/grass74/source/grass-${grasVer}.tar.gz
+tar -xf grass-${grasVer}.tar.gz
+cd grass-${grasVer}
 ./configure \
  --prefix=${bldDir} \
  --with-zlib-includes=${bldDir}/include/ \
