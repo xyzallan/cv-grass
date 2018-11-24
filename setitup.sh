@@ -1,4 +1,4 @@
-# How to make grass-gis build for CalValUs system (single tar.gz file).
+# How to make grass-gis build for CalValUs system (single tar.gz file) for CentOS7.
 # build made by user
 
 srcDir=`pwd`/src
