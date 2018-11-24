@@ -107,13 +107,8 @@ tar -xf grass-${grasVer}.tar.gz
 cd grass-${grasVer}
 ./configure \
  --prefix=${bldDir} \
- --without-ffmpeg \
- --without-mysql \
- --without-postgres \
- --without-odbc \
  --with-geos \
- --with-netcdf \
- --without-fftw
+ --with-netcdf 
  
 # --with-cxx \
 # --enable-largefile \
