@@ -1,3 +1,4 @@
+# How to make grass-gis build for CalValUs system (single tar.gz file).
 # build made by user
 
 srcDir=`pwd`/src
