@@ -1,4 +1,4 @@
-
+# build made by user
 
 curDir=`pwd`/src
 bldDir=`pwd`/build
