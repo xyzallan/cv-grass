@@ -6,9 +6,10 @@ bldDir=`pwd`/build
 if [ -f "${bldDir}" ]; then
    rm -rf ${bldDir}
 fi
-cd ${srcDir}
 
-rm -rf *
+if [ -f "${srcDir}" ]; then
+   rm -rf ${srcDir}
+fi
 #===============================================================================
 projVer="4.8.0"
 wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
