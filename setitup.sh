@@ -3,6 +3,9 @@
 
 srcDir=`pwd`/src
 bldDir=`pwd`/build
+oldPath=$PATH
+export PATH=$PATH:${bldDir}/bin
+
 if [ -f "${bldDir}" ]; then
    rm -rf ${bldDir}
 fi
@@ -93,11 +96,12 @@ tar -xf grass-${grasVer}.tar.gz
 cd grass-${grasVer}
 ./configure \
  --prefix=${bldDir} \
- --with-zlib-includes=${bldDir}/include/ \
  --without-ffmpeg \
  --without-mysql \
  --without-postgres \
  --without-odbc \
+ --with-geos \
+ --with-netcdf \
  --without-fftw
  
 # --with-cxx \
@@ -119,3 +123,4 @@ cd grass-${grasVer}
 make
 make install
 cd ${srcDir}
+export PATH=$oldPath
