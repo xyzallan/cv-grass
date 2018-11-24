@@ -71,7 +71,7 @@ make install
 #================================================================================
 cd ${srcDir}
 geosVer="3.4.3"
-wget -O geos-${geosVer}.tar.bz2 http://download.osgeo.org/geos/geos-3.4.3.tar.bz2
+wget -O geos-${geosVer}.tar.bz2 http://download.osgeo.org/geos/geos-${geosVer}.tar.bz2
 tar -jxf geos-${geosVer}.tar.gz
 cd geos-${geosVer}
 ./configure --prefix=${bldDir}
