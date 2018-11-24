@@ -70,6 +70,11 @@ make install
 
 #================================================================================
 cd ${srcDir}
+geosVer="3.4.3"
+wget -O geos-${flexVer}.tar.bz2 http://download.osgeo.org/geos/geos-3.4.3.tar.bz2
+
+#================================================================================
+cd ${srcDir}
 zlibVer="1.2.11"
 wget -O zlib-${zlibVer}.tar.gz https://zlib.net/zlib-${zlibVer}.tar.gz
 tar -xf zlib-${zlibVer}.tar.gz
