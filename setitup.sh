@@ -83,7 +83,7 @@ cd ${srcDir}
 ncdfVer="4.6.2"
 wget -O netcdf-${ncdfVer}.tar.gz ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.6.2.tar.gz
 tar -xf netcdf-${ncdfVer}.tar.gz
-cd netcdf-${ncdfVer}
+cd netcdf-c-${ncdfVer}
 ./configure --prefix=${bldDir}
 make
 make install
