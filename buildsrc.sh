@@ -4,6 +4,6 @@ rm -rf $srcDir
 mkdir -p $srcDir
 cd $srcDir
 
-yumdownloader proj --resolve
-yumdownloader gdal --resolve
+yumdownloader --source proj --resolve
+yumdownloader --source gdal --resolve
 
