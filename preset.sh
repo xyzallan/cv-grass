@@ -10,3 +10,6 @@ yum -y yum-utils
 #yum -y install zlib-devel
 
 rm -f *.rpm
+
+wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
+yum update
