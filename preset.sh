@@ -1,4 +1,5 @@
 # set up by root
+yum -y install wget
 wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -ivh epel-release-latest-7.noarch.rpm
 yum -y install gcc gcc-c++
