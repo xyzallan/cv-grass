@@ -4,4 +4,4 @@ rm -rf $srcDir
 mkdir -p $srcDir
 cd $srcDir
 
-yumdownloader proj
+yumdownloader proj --resolve
