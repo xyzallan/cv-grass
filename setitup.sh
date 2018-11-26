@@ -85,18 +85,17 @@ make
 make install || exit 1
 
 #================================================================================
-cd ${srcDir}
-ncdfVer="4.6.2"
-wget -O netcdf-${ncdfVer}.tar.gz ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-${ncdfVer}.tar.gz
-tar -xf netcdf-${ncdfVer}.tar.gz
-srcPath=$(ls -1 | grep netcdf | grep -v "tar.gz")
-cd $srcPath
-./configure --prefix=${bldDir} \
-  --disable-dap \
-  --disable-netcdf-4
-make
-make install || exit 1
-
+#cd ${srcDir}
+#ncdfVer="4.6.2"
+#wget -O netcdf-${ncdfVer}.tar.gz ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-${ncdfVer}.tar.gz
+#tar -xf netcdf-${ncdfVer}.tar.gz
+#srcPath=$(ls -1 | grep netcdf | grep -v "tar.gz")
+#cd $srcPath
+#./configure --prefix=${bldDir} \
+#  --disable-dap \
+#  --disable-netcdf-4
+#make
+#make install || exit 1
 #================================================================================
 cd ${srcDir}
 zlibVer="1.2.11"
