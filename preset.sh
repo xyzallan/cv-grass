@@ -11,6 +11,6 @@ yum -y install bzip2
 yum -y install proj-devel
 yum -y install geos-devel
 yum -y install zlib-devel
-
+yum -y install libtiff-devel
 rm -f *.rpm
 
