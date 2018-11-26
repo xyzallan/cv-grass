@@ -7,7 +7,7 @@ cd $srcDir
 #yumdownloader --source proj --resolve
 #yumdownloader --source gdal --resolve
 #yumdownloader --source netcdf --resolve
-yumdownloader --source proj --resolve
+yumdownloader --source m4 --resolve
 
 #yum install grass grass-libs grass-gui liblas
 # needed for GRASS Addons (via g.extension)
