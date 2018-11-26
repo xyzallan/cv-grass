@@ -37,8 +37,7 @@ srcPath=$(ls -1 | grep gdal | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
-make install
-make check || exit 1
+make install || exit 1
 
 #===============================================================================
 cd ${srcDir}
