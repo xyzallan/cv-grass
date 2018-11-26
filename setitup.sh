@@ -4,7 +4,7 @@
 srcDir=`pwd`/src
 bldDir=`pwd`/build
 oldPath=$PATH
-export PATH=$PATH:${bldDir}/bin:${bldDir}/includes
+export PATH=$PATH:${bldDir}/bin:${bldDir}/include
 
 if [ -f "${bldDir}" ]; then
    rm -rf ${bldDir}
