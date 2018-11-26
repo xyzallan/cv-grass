@@ -14,6 +14,7 @@ yum -y install zlib-devel
 yum -y install libtiff-devel
 yum -y install sqlite-devel
 yum -y install mesa-libGL-devel mesa-libGLU-devel
+yum -y install fftw-devel
 
 rm -f *.rpm
 
