@@ -125,6 +125,7 @@ wget -O grass-${grasVer}.tar.gz https://grass.osgeo.org/grass74/source/grass-${g
 tar -xf grass-${grasVer}.tar.gz
 srcPath=$(ls -1 | grep grass | grep -v "tar.gz")
 cd $srcPath
+sed -i 's/with_freetype=yes/with_freetype=no/g' configure
 ./configure \
  --prefix=${bldDir} \
  --with-geos
