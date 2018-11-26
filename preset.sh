@@ -12,5 +12,7 @@ yum -y install proj-devel
 yum -y install geos-devel
 yum -y install zlib-devel
 yum -y install libtiff-devel
+yum -y install sqlite-devel
+
 rm -f *.rpm
 
