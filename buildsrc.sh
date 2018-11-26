@@ -1,4 +1,4 @@
-srcDir=`pwd`/src
+srcDir=`pwd`/pkgs
 
 rm -rf $srcDir
 mkdir -p $srcDir
