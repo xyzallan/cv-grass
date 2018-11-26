@@ -31,7 +31,7 @@ make check || exit 1
 #===============================================================================
 cd ${srcDir}
 gdalVer="2.3.2"
-wget -O gdal-${gdalVer}.tar.gz http://download.osgeo.org/gdal/2.3.2/gdal-${gdalVer}.tar.gz 
+wget -O gdal-${gdalVer}.tar.gz http://download.osgeo.org/gdal/${gdalVer}/gdal-${gdalVer}.tar.gz 
 tar -xf gdal-${gdalVer}.tar.gz
 srcPath=$(ls -1 | grep gdal | grep -v "tar.gz")
 cd $srcPath
@@ -87,7 +87,7 @@ make install || exit 1
 #================================================================================
 cd ${srcDir}
 ncdfVer="4.6.2"
-wget -O netcdf-${ncdfVer}.tar.gz ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.6.2.tar.gz
+wget -O netcdf-${ncdfVer}.tar.gz ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-${ncdfVer}.tar.gz
 tar -xf netcdf-${ncdfVer}.tar.gz
 srcPath=$(ls -1 | grep netcdf | grep -v "tar.gz")
 cd $srcPath
