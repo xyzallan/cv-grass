@@ -77,8 +77,8 @@ make install || exit 1
 cd ${srcDir}
 geosVer="3.4.3"
 wget -O geos-${geosVer}.tar.bz2 http://download.osgeo.org/geos/geos-${geosVer}.tar.bz2
-tar -jxf geos-${geosVer}.tar.gz
-srcPath=$(ls -1 | grep geos | grep -v "tar.gz")
+tar -jxf geos-${geosVer}.tar.bz2
+srcPath=$(ls -1 | grep geos | grep -v "tar.bz2")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
