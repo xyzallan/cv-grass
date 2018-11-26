@@ -90,7 +90,8 @@ tar -xf netcdf-${ncdfVer}.tar.gz
 srcPath=$(ls -1 | grep netcdf | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir} \
-  --disable-dap
+  --disable-dap \
+  --disable-netcdf-4
 make
 make install
 
