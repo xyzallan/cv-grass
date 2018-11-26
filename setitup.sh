@@ -126,6 +126,7 @@ tar -xf grass-${grasVer}.tar.gz
 srcPath=$(ls -1 | grep grass | grep -v "tar.gz")
 cd $srcPath
 sed -i 's/with_freetype=yes/with_freetype=no/g' configure
+sed -i 's/with_sqlite=yes/with_sqlite=no/g' configure
 ./configure \
  --prefix=${bldDir} \
  --with-geos
