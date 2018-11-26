@@ -8,8 +8,8 @@ yum -y install gcc gcc-c++
 yum -y install byacc
 yum -y install yum-utils
 yum -y install bzip2
-#yum -y install proj-devel
-#yum -y install geos-devel
+yum -y install proj-devel
+yum -y install geos-devel
 yum -y install zlib-devel
 
 rm -f *.rpm
