@@ -60,7 +60,7 @@ srcPath=$(ls -1 | grep m4 | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
-make install
+make install || exit 1
 
 #================================================================================
 cd ${srcDir}
@@ -71,7 +71,7 @@ srcPath=$(ls -1 | grep flex | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
-make install
+make install || exit 1
 
 #================================================================================
 cd ${srcDir}
@@ -82,7 +82,7 @@ srcPath=$(ls -1 | grep geos | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
-make install
+make install || exit 1
 
 #================================================================================
 cd ${srcDir}
@@ -95,9 +95,7 @@ cd $srcPath
   --disable-dap \
   --disable-netcdf-4
 make
-make install
-
-exit 1
+make install || exit 1
 
 #================================================================================
 cd ${srcDir}
@@ -108,7 +106,7 @@ srcPath=$(ls -1 | grep zlib | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
-make install
+make install || exit 1
 
 #================================================================================
 cd ${srcDir}
@@ -119,7 +117,7 @@ srcPath=$(ls -1 | grep Python | grep -v "tar.gz")
 cd $srcPath
 ./configure --prefix=${bldDir}
 make
-make install
+make install || exit 1
 
 #================================================================================
 cd ${srcDir}
@@ -150,6 +148,6 @@ cd $srcPath
 # --with-netcdf \
 
 make
-make install
+make install || exit 1
 cd ${srcDir}
 export PATH=$oldPath
