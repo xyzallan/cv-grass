@@ -4,7 +4,7 @@
 srcDir=`pwd`/src
 bldDir=`pwd`/build
 oldPath=$PATH
-export PATH=$PATH:${bldDir}/bin
+export PATH=$PATH:${bldDir}/bin:${bldDir}/includes
 
 if [ -f "${bldDir}" ]; then
    rm -rf ${bldDir}
@@ -128,8 +128,8 @@ srcPath=$(ls -1 | grep grass | grep -v "tar.gz")
 cd $srcPath
 ./configure \
  --prefix=${bldDir} \
- --with-geos \
- --with-netcdf 
+ --with-geos
+ 
  
 # --with-cxx \
 # --enable-largefile \
