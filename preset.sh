@@ -15,6 +15,7 @@ yum -y install libtiff-devel
 yum -y install sqlite-devel
 yum -y install mesa-libGL-devel mesa-libGLU-devel
 yum -y install fftw-devel
+yum -y install cairo-devel
 
 rm -f *.rpm
 
