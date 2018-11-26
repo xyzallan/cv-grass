@@ -26,9 +26,7 @@ cd $srcPath
 ./configure --prefix=${bldDir}
 make 
 make install
-make check
-
-exit 1
+make check || exit 1
 
 #===============================================================================
 cd ${srcDir}
@@ -40,6 +38,7 @@ cd $srcPath
 ./configure --prefix=${bldDir}
 make
 make install
+make check || exit 1
 
 #===============================================================================
 cd ${srcDir}
@@ -51,6 +50,7 @@ cd $srcPath
 ./configure --prefix=${bldDir}
 make
 make install
+make check || exit 1
 
 #================================================================================
 cd ${srcDir}
