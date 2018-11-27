@@ -100,6 +100,10 @@ cd ${srcDir}
 geosVer="3.4.3"
 if [ "${dwnl}" == "J" ]; then
    wget -O geos-${geosVer}.tar.bz2 http://download.osgeo.org/geos/geos-${geosVer}.tar.bz2
+   tar -jxf geos-${geosVer}.tar.bz2
+   tar -zcf geos-${geosVer}.tar.gz geos-${geosVer}
+   rm -rf geos-${geosVer}/
+   rm -rf geos-${geosVer}.tar.bz2
 fi
 if [ "${inst}" == "J" ]; then
    tar -jxf geos-${geosVer}.tar.bz2
