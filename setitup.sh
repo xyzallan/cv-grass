@@ -9,16 +9,17 @@ bldDir=`pwd`/build
 oldPath=$PATH
 export PATH=$PATH:${bldDir}/bin:${bldDir}/include
 
-if [ -f "${bldDir}" ]; then
-   rm -rf ${bldDir}
+if [ "${inst}" == "J" ]; then
+   if [ -d "${bldDir}" ]; then
+      rm -rf ${bldDir}
+   fi
 fi
-
-if [ -f "${srcDir}" ]; then
-   rm -rf ${srcDir}
+if [ "${dwnl}" == "J" ]; then
+   if [ -d "${srcDir}" ]; then
+      rm -rf ${srcDir}
+   fi
+   mkdir -p ${srcDir}
 fi
-
-mkdir -p ${srcDir}
-
 #===============================================================================
 cd ${srcDir}
 projVer="4.8.0"
