@@ -4,7 +4,6 @@ echo "Kas laadin alla?"
 read dwnl
 echo "Kas installeerin?"
 read inst
-exit 1
 srcDir=`pwd`/src
 bldDir=`pwd`/build
 oldPath=$PATH
@@ -23,14 +22,20 @@ mkdir -p ${srcDir}
 #===============================================================================
 cd ${srcDir}
 projVer="4.8.0"
-wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
+if [ "${dwnl}" -eq "J" ]; then
+   wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
+fi
 tar -xf proj-${projVer}.tar.gz
 srcPath=$(ls -1 | grep proj | grep -v "tar.gz")
-cd $srcPath
-./configure --prefix=${bldDir}
-make 
-make install
-make check || exit 1
+
+if [ "${inst}" -eq "J" ]; then
+   cd $srcPath
+   ./configure --prefix=${bldDir}
+   make 
+   make install
+   make check || exit 1
+fi
+exit 1
 
 #===============================================================================
 cd ${srcDir}
