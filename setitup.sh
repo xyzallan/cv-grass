@@ -106,8 +106,8 @@ if [ "${dwnl}" == "J" ]; then
    rm -rf geos-${geosVer}.tar.bz2
 fi
 if [ "${inst}" == "J" ]; then
-   tar -jxf geos-${geosVer}.tar.bz2
-   srcPath=$(ls -1 | grep geos | grep -v "tar.bz2")
+   tar -xf geos-${geosVer}.tar.gz
+   srcPath=$(ls -1 | grep geos | grep -v "tar.gz")
    cd $srcPath
    ./configure --prefix=${bldDir}
    make
@@ -147,7 +147,7 @@ if [ "${dwnl}" == "J" ]; then
 fi
 if [ "${inst}" == "J" ]; then
    tar -xf Python-${pythVer}.tgz
-   srcPath=$(ls -1 | grep Python | grep -v "tar.gz")
+   srcPath=$(ls -1 | grep Python | grep -v "tgz")
    cd $srcPath
    ./configure --prefix=${bldDir}
    make
@@ -165,8 +165,14 @@ if [ "${inst}" == "J" ]; then
    cd $srcPath
    sed -i 's/with_freetype=yes/with_freetype=no/g' configure
    sed -i 's/with_sqlite=yes/with_sqlite=no/g' configure
+   sed -i 's/with_opengl=yes/with_opengl=no/g' configure
+   sed -i 's/with_fftw=yes/with_fftw=no/g' configure
+   sed -i 's/with_cairo=yes/with_cairo=no/g' configure
    ./configure \
     --prefix=${bldDir} \
+    --with-gdal=${bldDir}/lib \
+    --with-proj-libs=${bldDir}/lib \
+    --with-proj-includes=${bldDir}/include \
     --with-geos
  
 # --with-cxx \
