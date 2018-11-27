@@ -1,6 +1,10 @@
 # How to make grass-gis build for CalValUs system (single tar.gz file) for CentOS7.
 # build made by user
-
+echo "Kas laadin alla?"
+read dwnl
+echo "Kas installeerin?"
+read inst
+exit 1
 srcDir=`pwd`/src
 bldDir=`pwd`/build
 oldPath=$PATH
