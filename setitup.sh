@@ -22,13 +22,13 @@ mkdir -p ${srcDir}
 #===============================================================================
 cd ${srcDir}
 projVer="4.8.0"
-if [ "${dwnl}" -eq "J" ]; then
+if [ "${dwnl}" == "J" ]; then
    wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
 fi
 tar -xf proj-${projVer}.tar.gz
 srcPath=$(ls -1 | grep proj | grep -v "tar.gz")
 
-if [ "${inst}" -eq "J" ]; then
+if [ "${inst}" == "J" ]; then
    cd $srcPath
    ./configure --prefix=${bldDir}
    make 
