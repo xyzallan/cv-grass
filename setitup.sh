@@ -155,9 +155,9 @@ if [ "${inst}" == "J" ]; then
 fi
 #================================================================================
 cd ${srcDir}
-grasVer="7.4.2"
+grasVer="7.6.0"
 if [ "${dwnl}" == "J" ]; then
-   wget -O grass-${grasVer}.tar.gz https://grass.osgeo.org/grass74/source/grass-${grasVer}.tar.gz
+   wget -O grass-${grasVer}.tar.gz https://grass.osgeo.org/grass76/source/grass-${grasVer}.tar.gz
 fi
 if [ "${inst}" == "J" ]; then
    tar -xf grass-${grasVer}.tar.gz
