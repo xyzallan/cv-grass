@@ -22,7 +22,7 @@ if [ "${dwnl}" == "J" ]; then
 fi
 #===============================================================================
 cd ${srcDir}
-projVer="4.8.0"
+projVer="5.2.0"
 if [ "${dwnl}" == "J" ]; then
    wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
 fi
@@ -39,7 +39,7 @@ fi
 
 #===============================================================================
 cd ${srcDir}
-gdalVer="2.3.2"
+gdalVer="2.4.0"
 if [ "${dwnl}" == "J" ]; then
    wget -O gdal-${gdalVer}.tar.gz http://download.osgeo.org/gdal/${gdalVer}/gdal-${gdalVer}.tar.gz 
 fi
