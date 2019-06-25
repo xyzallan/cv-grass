@@ -1,1 +1,1 @@
-sudo usermod -aG vboxsf userName
+sudo usermod -aG vboxsf $1
