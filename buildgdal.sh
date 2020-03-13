@@ -22,7 +22,7 @@ if [ "${dwnl}" == "J" ]; then
 fi
 #===============================================================================
 cd ${srcDir}
-projVer="7.0.0"
+projVer="6.0.0"
 if [ "${dwnl}" == "J" ]; then
    wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
 fi
