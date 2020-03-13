@@ -44,10 +44,12 @@ if [ "${dwnl}" == "J" ]; then
    wget -O gdal-${gdalVer}.tar.gz http://download.osgeo.org/gdal/${gdalVer}/gdal-${gdalVer}.tar.gz 
 fi
 if [ "${inst}" == "J" ]; then
+   export LD_LIBRARY_PATH=${bldDir}/lib:${LD_LIBRARY_PATH};
+   export PATH=${bldDir}/bin:${PATH};
    tar -xf gdal-${gdalVer}.tar.gz
    srcPath=$(ls -1 | grep gdal | grep -v "tar.gz")
    cd $srcPath
-   ./configure --prefix=${bldDir}
+   CPPFLAGS=-I${bldDir}/include LDFLAGS=-L${bldDir}/lib ./configure --prefix=${bldDir}
    make
    make install || exit 1
 fi
