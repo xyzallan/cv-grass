@@ -49,7 +49,7 @@ if [ "${inst}" == "J" ]; then
    tar -xf gdal-${gdalVer}.tar.gz
    srcPath=$(ls -1 | grep gdal | grep -v "tar.gz")
    cd $srcPath
-   CPPFLAGS=-I${bldDir}/include LDFLAGS=-L${bldDir}/lib ./configure --prefix=${bldDir}
+   CPPFLAGS=-I${bldDir}/include LDFLAGS=-L${bldDir}/lib ./configure --prefix=${bldDir} --with-openjpeg --with-jpeg=internal
    make
    make install || exit 1
 fi
