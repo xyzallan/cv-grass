@@ -21,8 +21,27 @@ if [ "${dwnl}" == "J" ]; then
    mkdir -p ${srcDir}
 fi
 #===============================================================================
+
 cd ${srcDir}
-projVer="6.0.0"
+
+sqliteVer="autoconf-3340000"
+if [ "${dwnl}" == "J" ]; then
+   wget -O sqlite-${sqliteVer}.tar.gz https://www.sqlite.org/2020/sqlite-${sqliteVer}.tar.gz
+fi
+if [ "${inst}" == "J" ]; then
+   tar -xf sqlite-${sqliteVer}.tar.gz
+   cd sqlite-${sqliteVer}
+   ./configure --prefix=${bldDir}
+   make 
+   make install
+   make check || exit 1
+fi
+
+#===============================================================================
+
+
+cd ${srcDir}
+projVer="7.2.0"
 if [ "${dwnl}" == "J" ]; then
    wget -O proj-${projVer}.tar.gz http://download.osgeo.org/proj/proj-${projVer}.tar.gz
 fi
@@ -31,7 +50,7 @@ if [ "${inst}" == "J" ]; then
    srcPath=$(ls -1 | grep proj | grep -v "tar.gz")
 
    cd $srcPath
-   ./configure --prefix=${bldDir}
+   ./configure --prefix=${bldDir} SQLITE3_CFLAGS="-I${bldDir}/include" SQLITE3_LIBS="-L${bldDir}/lib -lsqlite3" --without-curl
    make 
    make install
    make check || exit 1
@@ -45,15 +64,14 @@ if [ "${dwnl}" == "J" ]; then
 fi
 if [ "${inst}" == "J" ]; then
    tar -xf gdal-${gdalVer}.tar.gz
-   srcPath=$(ls -1 | grep gdal | grep -v "tar.gz")
-   cd $srcPath
+   cd gdal-${gdalVer}
    ./configure --prefix=${bldDir} --with-proj=${bldDir}
    make
    make install || exit 1
 fi
 #===============================================================================
 cd ${srcDir}
-tiffVer="4.0.10"
+tiffVer="4.1.0"
 if [ "${dwnl}" == "J" ]; then
    wget -O tiff-${tiffVer}.tar.gz https://download.osgeo.org/libtiff/tiff-${tiffVer}.tar.gz
 fi
@@ -68,7 +86,7 @@ if [ "${inst}" == "J" ]; then
 fi
 #================================================================================
 cd ${srcDir}
-m4Ver="1.4.17"
+m4Ver="1.4.18"
 if [ "${dwnl}" == "J" ]; then
    wget -O m4-${m4Ver}.tar.gz http://ftp.gnu.org/gnu/m4/m4-${m4Ver}.tar.gz
 fi
@@ -97,7 +115,7 @@ if [ "${inst}" == "J" ]; then
 fi
 #================================================================================
 cd ${srcDir}
-geosVer="3.4.3"
+geosVer="3.8.1"
 if [ "${dwnl}" == "J" ]; then
    wget -O geos-${geosVer}.tar.bz2 http://download.osgeo.org/geos/geos-${geosVer}.tar.bz2
    tar -jxf geos-${geosVer}.tar.bz2
@@ -114,18 +132,6 @@ if [ "${inst}" == "J" ]; then
    make install || exit 1
 fi
 #================================================================================
-#cd ${srcDir}
-#ncdfVer="4.6.2"
-#wget -O netcdf-${ncdfVer}.tar.gz ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-${ncdfVer}.tar.gz
-#tar -xf netcdf-${ncdfVer}.tar.gz
-#srcPath=$(ls -1 | grep netcdf | grep -v "tar.gz")
-#cd $srcPath
-#./configure --prefix=${bldDir} \
-#  --disable-dap \
-#  --disable-netcdf-4
-#make
-#make install || exit 1
-#================================================================================
 cd ${srcDir}
 zlibVer="1.2.11"
 if [ "${dwnl}" == "J" ]; then
@@ -140,59 +146,6 @@ if [ "${inst}" == "J" ]; then
    make install || exit 1
 fi
 #================================================================================
-cd ${srcDir}
-pythVer="2.7.15"
-if [ "${dwnl}" == "J" ]; then
-   wget -O Python-${pythVer}.tgz https://www.python.org/ftp/python/${pythVer}/Python-${pythVer}.tgz
-fi
-if [ "${inst}" == "J" ]; then
-   tar -xf Python-${pythVer}.tgz
-   srcPath=$(ls -1 | grep Python | grep -v "tgz")
-   cd $srcPath
-   ./configure --prefix=${bldDir}
-   make
-   make install || exit 1
-fi
-#================================================================================
-cd ${srcDir}
-grasVer="7.6.0"
-if [ "${dwnl}" == "J" ]; then
-   wget -O grass-${grasVer}.tar.gz https://grass.osgeo.org/grass76/source/grass-${grasVer}.tar.gz
-fi
-if [ "${inst}" == "J" ]; then
-   tar -xf grass-${grasVer}.tar.gz
-   srcPath=$(ls -1 | grep grass | grep -v "tar.gz")
-   cd $srcPath
-   sed -i 's/with_freetype=yes/with_freetype=no/g' configure
-   sed -i 's/with_sqlite=yes/with_sqlite=no/g' configure
-   sed -i 's/with_opengl=yes/with_opengl=no/g' configure
-   sed -i 's/with_fftw=yes/with_fftw=no/g' configure
-   sed -i 's/with_cairo=yes/with_cairo=no/g' configure
-   ./configure \
-    --prefix=${bldDir} \
-    --with-gdal=${bldDir}/lib \
-    --with-proj-libs=${bldDir}/lib \
-    --with-proj-includes=${bldDir}/include \
-    --with-geos
- 
-# --with-cxx \
-# --enable-largefile \
-# --with-proj --with-proj-share=/usr/share/proj \
-# --with-gdal=/usr/bin/gdal-config \
-# --with-sqlite \
-# --with-python \
-# --with-cairo --with-cairo-ldflags=-lfontconfig \
-# --with-freetype --with-freetype-includes=/usr/include/freetype2 \
-# --with-wxwidgets=/usr/bin/wx-config \
-# --with-openmp \
-# --with-blas --with-blas-includes=/usr/include/atlas-x86_64-base/ \
-# --with-lapack --with-lapack-includes=/usr/include/atlas-x86_64-base/ \
-# --with-fftw \
-# --with-geos \
-# --with-netcdf \
 
-   make
-   make install || exit 1
-fi
 cd ${srcDir}
 export PATH=$oldPath
