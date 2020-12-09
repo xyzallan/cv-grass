@@ -39,7 +39,7 @@ fi
 
 #===============================================================================
 cd ${srcDir}
-gdalVer="3.0.4"
+gdalVer="3.1.2"
 if [ "${dwnl}" == "J" ]; then
    wget -O gdal-${gdalVer}.tar.gz http://download.osgeo.org/gdal/${gdalVer}/gdal-${gdalVer}.tar.gz 
 fi
