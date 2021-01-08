@@ -25,4 +25,4 @@ wget -O targz/geos-${geosVer}.tar.bz2 http://download.osgeo.org/geos/geos-${geos
 zlibVer="1.2.11"
 wget -O targz/zlib-${zlibVer}.tar.gz https://zlib.net/zlib-${zlibVer}.tar.gz
 
-
+wget -O targz/openjpeg-2.4.0 https://github.com/uclouvain/openjpeg/archive/v2.4.0.tar.gz
